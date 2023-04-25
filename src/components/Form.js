@@ -6,20 +6,32 @@ const Form = ({ addTransaction }) => {
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newTransaction = {
-      date: date,
-      description: description,
-      category: category,
-      amount: parseFloat(amount),
-    };
-    addTransaction(newTransaction);
-    setDate('');
-    setDescription('');
-    setCategory('');
-    setAmount('');
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const transaction = { date, description, category, amount };
+
+    fetch('http://localhost:5000/transactions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(transaction)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        // do something with the response data
+      })
+      .catch(error => console.error(error));
   };
+
+
+
+
+
 
   return (
     <div className="container">

@@ -28,9 +28,6 @@ const App = () => {
       <Header />
       <Form />
       <Table transactions={transactions} />
-
-
-    
       <Footer />
     </div>
   );
