@@ -12,5 +12,8 @@ list of your recent bank transactions, among other features.
 instructions below will walk you through the process of ideation and planning your app: deciding on your user interface, planning how the information will be laid out on the page
 
 
+
+
+
 # Fetching Data
 Run this command to get the backend started: json-server --watch db.json
