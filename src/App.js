@@ -14,7 +14,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/transactions')
+    fetch('https://my-json-server.typicode.com/QUANDEVV/Bank/transactions')
       .then(response => response.json())
       .then(data => setTransactions(data));
   }, []);
