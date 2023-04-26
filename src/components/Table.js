@@ -4,7 +4,7 @@ const Table = ({ transactions, onDelete }) => {
   const total = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
 
   const handleDelete = (id) => {
-    fetch(`https://my-json-server.typicode.com/QUANDEVV/Bank/transactions/${id}`, {
+    fetch(`https://my-json-server.typicode.com/QUANDEVV/Bank/transactions/ ${id}`, {
       method: 'DELETE'
     })
       .then((response) => {
