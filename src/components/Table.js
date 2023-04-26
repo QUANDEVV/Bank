@@ -7,10 +7,16 @@ const Table = ({ transactions, onDelete }) => {
     fetch(`https://my-json-server.typicode.com/QUANDEVV/Bank/transactions/${id}`, {
       method: 'DELETE'
     })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(() => {
         onDelete(id);
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(`Error deleting transaction with ID ${id}: ${error}`));
   };
 
   return (
