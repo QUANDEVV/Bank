@@ -1,6 +1,8 @@
 #live link  
 
+
 https://bank-inky.vercel.app/
+https://quandevv.github.io/Bank/
 
 
 # Code Challenge-Bank-of-Flatiron
