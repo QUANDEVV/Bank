@@ -4,9 +4,8 @@ const Table = ({ transactions, onDelete }) => {
   const total = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
 
   const handleDelete = (id,) => {
-    
     fetch(`http://localhost:5000/transaction/${id}`, { 
-    method: 'DELETE'
+      method: 'DELETE'
     })
       .then((response) => {
         if (!response.ok) {
