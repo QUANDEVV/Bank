@@ -97,6 +97,20 @@
       "category": "Food",
       "amount": "3000",
       "id": 14
+    },
+    {
+      "date": "2023-04-13",
+      "description": "heloo",
+      "category": "helo2",
+      "amount": "6000",
+      "id": 15
+    },
+    {
+      "date": "2023-05-03",
+      "description": "ppp",
+      "category": "ooo",
+      "amount": "89999",
+      "id": 17
     }
   ]
-} 
+}

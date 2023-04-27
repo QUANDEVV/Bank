@@ -6,14 +6,11 @@ const Form = ({ addTransaction }) => {
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
 
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const transaction = { date, description, category, amount };
 
-    fetch(`  http://localhost:5000/transaction/`, {
+    fetch(`http://localhost:5000/transaction/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -28,53 +25,48 @@ const Form = ({ addTransaction }) => {
       .catch(error => console.error(error));
   };
 
-
-
-
-
-
   return (
     <div className="container">
-    <form onSubmit={handleSubmit}>
-      <label>
-        Date:
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Description:
-        <input
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Category:
-        <input
-          type="text"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Amount:
-        <input
-          type="number"
-          step="0.01"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Add Transaction</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Date:
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Description:
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Category:
+          <input
+            type="text"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Amount:
+          <input
+            type="number"
+            step="0.01"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Add Transaction</button>
+      </form>
     </div>
   );
 };
