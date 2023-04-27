@@ -13,7 +13,7 @@ const Form = ({ addTransaction }) => {
     e.preventDefault();
     const transaction = { date, description, category, amount };
 
-    fetch('https://my-json-server.typicode.com/QUANDEVV/Bank/transactions', {
+    fetch(`  http://localhost:5000/transaction/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
